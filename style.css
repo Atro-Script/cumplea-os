@@ -1,0 +1,63 @@
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/playfair-display-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:700;font-display:swap;src:url(fonts/playfair-display-latin-700-italic.woff2) format("woff2")}
+@font-face{font-family:"Jost";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jost-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Jost";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jost-latin-600-normal.woff2) format("woff2")}
+:root{--mo:#7a2cf0;--mo2:#b98cff;--mo3:#2a0a55}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%}
+body{font-family:Jost,"Segoe UI",system-ui,sans-serif;color:#fff;background:#07040d;overflow:hidden}
+.fondo{position:fixed;inset:0;overflow:hidden;z-index:-1;background:radial-gradient(#2a0a55 1px,transparent 1.5px) 0 0/46px 46px}
+.fondo i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(90px);opacity:.45;background:var(--mo);animation:flota 14s ease-in-out infinite alternate}
+.fondo i:nth-child(1){left:-25vmax;top:-20vmax}
+.fondo i:nth-child(2){right:-30vmax;bottom:-25vmax;background:#4b1aa8;animation-duration:18s}
+.fondo i:nth-child(3){left:30vw;top:40vh;width:30vmax;height:30vmax;opacity:.25;background:var(--mo2);animation-duration:11s}
+@keyframes flota{to{transform:translate(8vmax,6vmax) scale(1.15)}}
+#nav{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;gap:6px;justify-content:center;flex-wrap:wrap;padding:8px;background:#07040dcc;backdrop-filter:blur(8px);border-bottom:1px solid #2a0a55;font:600 14px Jost,system-ui,sans-serif;letter-spacing:.5px}
+#nav a{padding:4px 10px;border-radius:12px;cursor:pointer;color:#a99bc7}
+#nav a.on{color:#fff;background:var(--mo)}
+.vista{position:absolute;inset:0;padding:70px 16px 16px;display:none;flex-direction:column;align-items:center;justify-content:safe center;gap:16px;text-align:center;overflow:auto}
+.vista.on{display:flex;animation:ent .6s}
+@keyframes ent{from{opacity:0;transform:translateY(16px)}}
+.titulo{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(34px,11vw,64px);letter-spacing:1px;background:linear-gradient(90deg,#fff,var(--mo2),#fff,var(--mo2));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:brilla 5s linear infinite}
+@keyframes brilla{to{background-position:300% 0}}
+.sub{font-size:20px;letter-spacing:10px;text-transform:uppercase;color:var(--mo2);margin-top:-10px}
+.titulo2{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:700;font-size:clamp(24px,6vw,38px);line-height:1.25}
+.btn{font:600 17px Jost,system-ui,sans-serif;letter-spacing:.5px;color:#fff;background:transparent;border:2px solid var(--mo2);border-radius:30px;padding:10px 28px;cursor:pointer;transition:.2s;box-shadow:0 0 18px #7a2cf055}
+.btn:hover,.btn:active{background:var(--mo);transform:scale(1.05);box-shadow:0 0 28px var(--mo)}
+.gato{width:120px;filter:drop-shadow(0 0 14px #7a2cf0);animation:bota 2.4s ease-in-out infinite}
+@keyframes bota{50%{transform:translateY(-8px) rotate(3deg)}}
+.regalo{position:relative;width:150px;height:150px;cursor:pointer;animation:bota 3s ease-in-out infinite;filter:drop-shadow(0 0 20px #7a2cf099)}
+.caja{position:absolute;bottom:0;width:150px;height:100px;background:linear-gradient(#7a2cf0,#4b1aa8);border:2px solid #e9dcff;border-radius:8px}
+.tapa{position:absolute;top:0;left:-8px;width:166px;height:42px;background:linear-gradient(#9b5cff,#7a2cf0);border:2px solid #e9dcff;border-radius:8px;z-index:2;transition:.8s}
+.cinta{position:absolute;left:62px;top:0;width:26px;height:150px;background:#fff;z-index:3;transition:.8s;border-radius:3px}
+.regalo.abre .tapa{transform:translateY(-80px) rotate(-18deg);opacity:0}
+.regalo.abre .cinta{opacity:0}
+.corazones{display:flex;gap:18px;flex-wrap:wrap;justify-content:center}
+.corazones>div{display:flex;flex-direction:column;gap:12px;align-items:center}
+.cora{width:130px;height:120px;border:0;background:none;cursor:pointer;animation:lat 2s ease-in-out infinite;filter:drop-shadow(0 0 14px #7a2cf0)}
+.corazones>div:nth-child(2) .cora{animation-delay:.3s}.corazones>div:nth-child(3) .cora{animation-delay:.6s}
+@keyframes lat{50%{transform:scale(1.08)}}
+.cora .h{fill:#fff}.cora .ic{fill:none;stroke:var(--mo);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.cora:hover .h{fill:var(--mo2)}
+.papel{background:#fff;color:#16081f;border-radius:14px;padding:24px 22px;max-width:460px;width:100%;text-align:left;font-size:clamp(16px,4.2vw,18px);line-height:1.7;border-top:6px solid var(--mo);box-shadow:0 0 40px #7a2cf088}
+.papel h3{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-size:28px;color:var(--mo);margin-bottom:12px}
+@keyframes apar{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.papel p{margin-bottom:12px;animation:apar .8s both}
+.pista{font-size:17px;color:var(--mo2);letter-spacing:1px}
+#jardin{position:relative;width:min(92vw,520px);height:min(52vh,340px);background:linear-gradient(#0d0719,#1a0b33);border:2px solid var(--mo);border-radius:20px;cursor:pointer;overflow:hidden;box-shadow:0 0 30px #7a2cf066}
+#jardin svg{position:absolute;overflow:visible;pointer-events:none}
+.tallo{stroke:var(--mo2);stroke-width:3;fill:none;stroke-dasharray:var(--l);stroke-dashoffset:var(--l);animation:dib 1s ease-out forwards}
+@keyframes dib{to{stroke-dashoffset:0}}
+.cab{transform-box:fill-box;transform-origin:center;animation:flo .9s .8s cubic-bezier(.3,1.6,.5,1) both,mece 3s 1.7s ease-in-out infinite}
+@keyframes flo{from{transform:scale(0) rotate(-90deg)}}
+@keyframes mece{50%{transform:rotate(8deg)}}
+.hoja{fill:var(--mo);opacity:0;animation:ent .5s .5s forwards}
+#tarta{width:min(80vw,300px);cursor:pointer;filter:drop-shadow(0 0 22px #7a2cf099)}
+.llama{fill:#fff;transform-box:fill-box;transform-origin:bottom;animation:parp .35s infinite alternate;filter:drop-shadow(0 0 6px #b98cff)}
+@keyframes parp{to{transform:scale(.85,1.12) rotate(5deg)}}
+.vela.off .llama{display:none}
+.oculto{display:none}.oculto.on{display:block;animation:ent .6s}
+#final{padding:0;background:#05030a}
+#lienzo{width:100%;height:100%;display:block}
+.flota{position:absolute;bottom:20px;z-index:3}
+#confeti{position:fixed;inset:0;pointer-events:none;z-index:9}

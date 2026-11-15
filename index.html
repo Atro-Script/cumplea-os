@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feliz cumpleaños</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="fondo"><i></i><i></i><i></i></div>
+<nav id="nav"><a data-go="inicio">Feliz cumple</a><a data-go="sorpresa">Tu sorpresa</a><a data-go="carta">Mensaje</a><a data-go="flores">Flores</a><a data-go="pastel">Pastel</a><a data-go="final">Final</a></nav>
+
+<section id="inicio" class="vista on">
+ <svg class="gato" viewBox="0 0 120 120"><path d="M22 52 L26 12 L52 34 Q60 32 68 34 L94 12 L98 52 Q108 66 100 86 Q86 108 60 108 Q34 108 20 86 Q12 66 22 52Z" fill="#f4efff" stroke="#7a2cf0" stroke-width="3"/><path d="M36 62 q6 -6 12 0 M72 62 q6 -6 12 0" stroke="#1a0b33" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M54 74 h12 l-6 6z" fill="#b98cff"/><path d="M60 80 q-6 8 -12 4 M60 80 q6 8 12 4" stroke="#1a0b33" stroke-width="2.5" fill="none"/><path d="M34 22 L60 4 L86 22 Q60 14 34 22Z" fill="#7a2cf0" stroke="#fff" stroke-width="3"/><circle cx="60" cy="5" r="5" fill="#fff"/></svg>
+ <h1 class="titulo">CUMPLEAÑOS</h1><p class="sub">24 años</p>
+ <div id="regalo" class="regalo"><div class="tapa"></div><div class="caja"></div><div class="cinta"></div></div>
+ <button class="btn" id="abrir">Ábreme</button>
+</section>
+
+<section id="sorpresa" class="vista">
+ <h2 class="titulo2">Una sorpresa de cumpleaños<br>solo para ti</h2>
+ <div class="corazones">
+  <div><button class="cora" data-go="carta"><svg viewBox="0 0 120 110"><path class="h" d="M60 104C8 64 -2 34 12 16 28 -2 52 4 60 26 68 4 92 -2 108 16 122 34 112 64 60 104Z"/><g class="ic"><rect x="36" y="36" width="48" height="34" rx="3"/><path d="M36 38 L60 58 L84 38"/></g></svg></button><button class="btn" data-go="carta">Carta</button></div>
+  <div><button class="cora" data-go="flores"><svg viewBox="0 0 120 110"><path class="h" d="M60 104C8 64 -2 34 12 16 28 -2 52 4 60 26 68 4 92 -2 108 16 122 34 112 64 60 104Z"/><g class="ic"><path d="M48 40 q-5 10 0 18 q8 -4 6 -18z M60 34 q-6 12 0 22 q8 -10 0 -22z M72 40 q5 10 0 18 q-8 -4 -6 -18z"/><path d="M60 58 V80 M52 58 L60 74 M68 58 L60 74"/></g></svg></button><button class="btn" data-go="flores">Flores</button></div>
+  <div><button class="cora" data-go="pastel"><svg viewBox="0 0 120 110"><path class="h" d="M60 104C8 64 -2 34 12 16 28 -2 52 4 60 26 68 4 92 -2 108 16 122 34 112 64 60 104Z"/><g class="ic"><rect x="38" y="56" width="44" height="18" rx="3"/><rect x="46" y="44" width="28" height="12" rx="3"/><path d="M54 44 v-8 M60 44 v-10 M66 44 v-8"/></g></svg></button><button class="btn" data-go="pastel">Pastel</button></div>
+ </div>
+</section>
+
+<section id="carta" class="vista">
+ <div class="papel" id="papel"></div>
+ <button class="btn" data-go="sorpresa">← Volver</button>
+</section>
+
+<section id="flores" class="vista">
+ <p class="pista">Toca el jardín para que florezca</p>
+ <div id="jardin"></div>
+ <button class="btn" data-go="sorpresa">← Volver</button>
+</section>
+
+<section id="pastel" class="vista">
+ <p class="pista" id="pistaPastel">Toca el pastel para apagar las velas</p>
+ <svg id="tarta" viewBox="0 0 240 220">
+  <ellipse cx="120" cy="206" rx="104" ry="10" fill="#7a2cf0" opacity=".3"/>
+  <rect x="30" y="124" width="180" height="76" rx="14" fill="#f4efff" stroke="#2a0a55" stroke-width="3"/>
+  <path d="M30 140 q15 18 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 V124 H30Z" fill="#7a2cf0" stroke="#2a0a55" stroke-width="3"/>
+  <rect x="58" y="86" width="124" height="46" rx="12" fill="#b98cff" stroke="#2a0a55" stroke-width="3"/>
+  <path d="M58 102 q15 16 31 0 t31 0 t31 0 V86 H58Z" fill="#fff" stroke="#2a0a55" stroke-width="3"/>
+  <g class="vela"><rect x="90" y="52" width="9" height="34" fill="#fff" stroke="#2a0a55" stroke-width="2"/><ellipse class="llama" cx="94.5" cy="44" rx="6" ry="10"/></g>
+  <g class="vela"><rect x="116" y="48" width="9" height="38" fill="#7a2cf0" stroke="#2a0a55" stroke-width="2"/><ellipse class="llama" cx="120.5" cy="40" rx="6" ry="10"/></g>
+  <g class="vela"><rect x="142" y="52" width="9" height="34" fill="#fff" stroke="#2a0a55" stroke-width="2"/><ellipse class="llama" cx="146.5" cy="44" rx="6" ry="10"/></g>
+ </svg>
+ <button class="btn oculto" id="alFinal">Hay una última sorpresa →</button>
+ <button class="btn" data-go="sorpresa">← Volver</button>
+</section>
+
+<section id="final" class="vista">
+ <canvas id="lienzo"></canvas>
+ <button class="btn flota" id="repetir">Repetir</button>
+</section>
+<canvas id="confeti"></canvas>
+<script src="script.js"></script></body></html>
